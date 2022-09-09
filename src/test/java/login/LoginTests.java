@@ -2,8 +2,6 @@ package login;
 
 import base.BaseTests;
 import org.junit.jupiter.api.Test;
-import pages.LoginPage;
-import pages.SecureAreaPage;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
