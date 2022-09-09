@@ -2,7 +2,6 @@ package dropdown;
 
 import base.BaseTests;
 import org.junit.jupiter.api.Test;
-import pages.DropdownPage;
 
 import static org.junit.jupiter.api.Assertions.*;
 

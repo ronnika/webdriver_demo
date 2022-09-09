@@ -6,8 +6,6 @@ import org.openqa.selenium.WebDriver;
 public class HomePage {
     private WebDriver driver;
 
-    private By dropdownLink = By.linkText("Form Authentication");
-
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
@@ -24,5 +22,10 @@ public class HomePage {
     public DropdownPage clickDropdown() {
         clickLink("Dropdown");
         return new DropdownPage(driver);
+    }
+
+    public HoversPage clickHovers() {
+        clickLink("Hovers");
+        return new HoversPage(driver);
     }
 }
