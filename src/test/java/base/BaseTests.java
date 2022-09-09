@@ -21,18 +21,12 @@ public class BaseTests {
     public static void init() {
         System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver");
     }
-    @Test
+    @BeforeEach
     public void setUp() {
         driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/");
         driver.manage().window().maximize();
         homePage = new HomePage(driver);
-//        WebElement shiftingContentLink = driver.findElement(By.linkText("Shifting Content"));
-//        shiftingContentLink.click();
-//        WebElement menuLink = driver.findElement(By.linkText("Example 1: Menu Element"));
-//        menuLink.click();
-//        List<WebElement> menuElements = driver.findElements(By.cssSelector("div.example li"));
-//        System.out.println(menuElements.size());
     }
 
     @AfterEach
