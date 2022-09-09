@@ -21,6 +21,7 @@ public class BaseTests {
     public static void init() {
         System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver");
     }
+
     @BeforeEach
     public void setUp() {
         driver = new ChromeDriver();

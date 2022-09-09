@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import pages.LoginPage;
 import pages.SecureAreaPage;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LoginTests extends BaseTests {
     @Test
@@ -14,8 +14,6 @@ public class LoginTests extends BaseTests {
         loginPage.setUserName("tomsmith");
         loginPage.setPassword("SuperSecretPassword!");
         SecureAreaPage secureAreaPage = loginPage.clickLoginButton();
-        assertEquals("You logged into a secure area!\n×",
-                secureAreaPage.getAlertText(),
-                "Should be equal");
+        assertTrue(secureAreaPage.getAlertText().contains("You logged into a secure area!"));
     }
 }
