@@ -26,4 +26,11 @@ public class KeysTests extends BaseTests {
                 "Result is not correct");
     }
 
+    @Test
+    public void testSliderRangeKeysUntil4() {
+        var sliderPage = homePage.clickHorizontalSlider();
+        sliderPage.moveSliderToNumber(4);
+        assertEquals("4", sliderPage.getResult(), "Result is not correct");
+    }
+
 }
