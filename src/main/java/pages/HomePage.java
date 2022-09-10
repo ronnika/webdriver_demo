@@ -47,4 +47,9 @@ public class HomePage extends BasePage {
         clickLink("File Upload");
         return new FileUploaderPage(driver);
     }
+
+    public ContextMenuPage clickContextMenu() {
+        clickLink("Context Menu");
+        return new ContextMenuPage(driver);
+    }
 }

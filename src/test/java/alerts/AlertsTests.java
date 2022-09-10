@@ -44,4 +44,16 @@ public class AlertsTests extends BaseTests {
                 alertPage.getAlertResult(),
                 "Result text is not correct");
     }
+
+    @Test
+    public void testContextClickAlert() {
+        var contextPage = homePage.clickContextMenu();
+        contextPage.contexClick();
+
+        assertEquals("You selected a context menu",
+                contextPage.getAlertText(),
+                "Alert text is incorrect");
+
+        contextPage.clickToAcceptAlert();
+    }
 }
