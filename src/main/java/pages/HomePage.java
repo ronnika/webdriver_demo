@@ -3,11 +3,10 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class HomePage {
-    private WebDriver driver;
+public class HomePage extends BasePage {
 
     public HomePage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     private void clickLink(String linkText) {
@@ -32,5 +31,10 @@ public class HomePage {
     public KeyPressPage clickKeyPresses() {
         clickLink("Key Presses");
         return new KeyPressPage(driver);
+    }
+
+    public HorizontalSlider clickHorizontalSlider() {
+        clickLink("Horizontal Slider");
+        return new HorizontalSlider(driver);
     }
 }
