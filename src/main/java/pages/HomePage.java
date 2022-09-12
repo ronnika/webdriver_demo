@@ -52,4 +52,9 @@ public class HomePage extends BasePage {
         clickLink("Context Menu");
         return new ContextMenuPage(driver);
     }
+
+    public WysiwygEditorPage clickWysiwygEditor() {
+        clickLink("WYSIWYG Editor");
+        return new WysiwygEditorPage(driver);
+    }
 }
