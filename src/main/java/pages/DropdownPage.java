@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -11,6 +12,7 @@ import java.util.stream.Collectors;
 public class DropdownPage  extends BasePage {
 
     private By dropdown = By.id("dropdown");
+    private WebElement dropdownElement = driver.findElement(dropdown);
 
     public DropdownPage(WebDriver driver) {
         super(driver);
@@ -27,7 +29,12 @@ public class DropdownPage  extends BasePage {
                 .collect(Collectors.toList());
     }
 
+    public void addMultipleAttribute() {
+        String script = "arguments[0].setAttribute(\"multiple\", \"\")";
+        ((JavascriptExecutor)driver).executeScript(script, dropdownElement);
+    }
+
     private Select findDropdownElement() {
-        return new Select(driver.findElement(dropdown));
+        return new Select(dropdownElement);
     }
 }

@@ -20,4 +20,5 @@ public class DynamicLoadingPage extends BasePage {
         driver.findElement(example2Link).click();
         return new DynamicLoadingExample2Page(driver);
     }
+
 }
