@@ -16,6 +16,7 @@ public class BaseTests {
         System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+//        driver.manage().timeouts().getPageLoadTimeout();
         homePage = new HomePage(driver);
     }
 
