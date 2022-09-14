@@ -32,4 +32,10 @@ public class DynamicLoadingExample1Page extends BasePage {
     public String getLoadedText() {
         return driver.findElement(loadedText).getText();
     }
+
+    public String getStartButtonText() {
+        return driver.findElement(startButton).getText();
+    }
+
+
 }

@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.HomePage;
+import utils.WindowManager;
 
 public class BaseTests {
     private static WebDriver driver;
@@ -28,6 +29,10 @@ public class BaseTests {
     @AfterAll
     public static void tearDown() {
         driver.quit();
+    }
+
+    public WindowManager getWindowManager() {
+        return new WindowManager(driver);
     }
 
 }

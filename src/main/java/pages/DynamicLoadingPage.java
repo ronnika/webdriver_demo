@@ -1,7 +1,10 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
+import utils.WindowManager;
 
 public class DynamicLoadingPage extends BasePage {
     private String linkXpathFormat = ".//a[contains(text(), '%s')]";
@@ -19,6 +22,16 @@ public class DynamicLoadingPage extends BasePage {
     public DynamicLoadingExample2Page clickExample2() {
         driver.findElement(example2Link).click();
         return new DynamicLoadingExample2Page(driver);
+    }
+
+
+
+    public DynamicLoadingExample1Page contextClickExample1() {
+        Actions actions = new Actions(driver);
+        actions.keyDown(Keys.CONTROL)
+                        .click(driver.findElement(example1Link))
+                        .perform();
+        return new DynamicLoadingExample1Page(driver);
     }
 
 }
