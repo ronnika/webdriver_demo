@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import pages.HomePage;
+import utils.CookieManager;
 import utils.WindowManager;
 
 public class BaseTests {
@@ -29,7 +30,6 @@ public class BaseTests {
     @BeforeEach
     public void goHome() {
         driver.get("https://the-internet.herokuapp.com/");
-        setCookie();
     }
 
 //    @AfterEach
@@ -52,6 +52,10 @@ public class BaseTests {
     public WindowManager getWindowManager() {
         return new WindowManager(driver);
     }
+    public CookieManager getCookieManager() {
+        return new CookieManager(driver);
+    }
+
 
     private static ChromeOptions getChromeOptions() {
         ChromeOptions options = new ChromeOptions();
@@ -59,12 +63,4 @@ public class BaseTests {
         options.setHeadless(true);
         return options;
     }
-
-    private void setCookie() {
-        Cookie cookie = new Cookie.Builder("Tau", "123")
-                .domain("the-internet.herokuapp.com")
-                .build();
-        driver.manage().addCookie(cookie);
-    }
-
 }
